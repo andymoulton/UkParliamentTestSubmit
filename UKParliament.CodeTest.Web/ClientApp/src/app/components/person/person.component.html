@@ -1,0 +1,29 @@
+<p>person works!</p>
+
+<div *ngIf="editedPerson">
+
+  <div class="modal-overlay" (click)="onCancel()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+
+      <h3>Edit Person</h3>
+      <hr/>
+      <form>
+        <label>First name: <input [(ngModel)]="editedPerson.firstName" name="firstName" /></label><br />
+        <label>Last name: <input [(ngModel)]="editedPerson.lastName" name="lastName" /></label><br />
+        <label>Date of Birth: <input type="date" [(ngModel)]="editedPerson.dateOfBirth" name="dateOfBirth" /></label><br />
+        <label>
+          Department:
+          <select [(ngModel)]="editedPerson.departmentId" name="department">
+            <option *ngFor="let dept of departments" [ngValue]="dept.id">{{ dept.name }}</option>
+          </select>
+        </label><br />
+
+        <div class="modal-buttons">
+          <button type="button" (click)="onSave()">Save</button>
+          <button type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

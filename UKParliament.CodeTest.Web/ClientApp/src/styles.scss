@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+$colour-purple: #373151;
+$colour-white: #fff;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem 0;
+  background-color: #ebe9e8;
+}
+
+h1, h2, h4, h5 {
+  color: $colour-white;
+}
+
+h3 {
+  color: $colour-purple;
+}
+
+strong.highlight {
+  color: $colour-white;
+}
+
+table {
+  thead {
+    th {
+      color: $colour-purple !important;
+      vertical-align: top;
+    }
+  }
+}
+
+.table-responsive {
+    overflow-x: auto;
+
+    .table {
+        min-width: 600px;
+    }
+}
+
+th.mat-header-cell,
+.mat-header-row th,
+.mat-header-cell .mat-sort-header-content, .mat-sort-header-content, mat-mdc-header-cell {
+  font-weight: bold !important;
+  margin-bottom: 5px;
+  vertical-align: central;
+}
+
+th.mat-header-cell .mat-sort-header-content,
+.mat-header-cell .mat-sort-header-content, .mat-sort-header-content, mat-mdc-header-cell {
+  font-weight: bold !important;
+  margin-bottom: 5px;
+  vertical-align: central;
+}
