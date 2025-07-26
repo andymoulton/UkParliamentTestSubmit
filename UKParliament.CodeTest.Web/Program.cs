@@ -13,24 +13,17 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddControllersWithViews();
-
         builder.Services.AddDbContext<PersonManagerContext>(op => op.UseInMemoryDatabase("PersonManager"));
-        //builder.Services.AddDbContext<DepartmentManagerContext>(op => op.UseInMemoryDatabase("DepartmentManager"));
-
         builder.Services.AddScoped<DbContext>(provider => provider.GetRequiredService<PersonManagerContext>());
         builder.Services.AddScoped<IPersonService, PersonService>();
 
         var app = builder.Build();
 
         // Create database so the data seeds
-
         using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
         {
             using var context = serviceScope.ServiceProvider.GetRequiredService<PersonManagerContext>();
             context.Database.EnsureCreated();
-            
-            //using var departmentContext = serviceScope.ServiceProvider.GetRequiredService<DepartmentManagerContext>();
-            //departmentContext.Database.EnsureCreated();
         }
 
         // Configure the HTTP request pipeline.
