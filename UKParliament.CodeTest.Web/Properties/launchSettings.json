@@ -11,7 +11,7 @@
     "UKParliament.CodeTest.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7048;http://localhost:5048",
+      "applicationUrl": "http://localhost:7048;http://localhost:5048",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
